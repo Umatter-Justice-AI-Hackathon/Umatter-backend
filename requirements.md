@@ -49,3 +49,7 @@ The key features of the front end will include:
 - Based on the trendline and chat history, a "best next step" suggestion for the user.
 - A chat interface for interacting with the chatbot.
 - Colours adapt to mood.
+
+# Deployment.
+
+Deployment of the FastAPI backend will be done using Docker images built in a GHA and deployed to Render. This will include the front end. For simplicity, lets keep it monolithic for now.

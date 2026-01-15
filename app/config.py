@@ -4,7 +4,6 @@ Configuration management using Pydantic Settings.
 Loads environment variables and provides type-safe access to configuration values.
 """
 
-
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 

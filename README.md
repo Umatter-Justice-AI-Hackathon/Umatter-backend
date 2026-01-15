@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../images/Logo.png" alt="Umatter Logo" width="200"/>
+  <img src="images/Logo.png" alt="Umatter Logo" width="200"/>
 </div>
 
 # Umatter

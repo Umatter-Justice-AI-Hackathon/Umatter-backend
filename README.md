@@ -72,7 +72,14 @@ ENVIRONMENT=production
 FRONTEND_URL=https://your-frontend.onrender.com
 LLM_PROVIDER=groq
 GROQ_API_KEY=<your-groq-api-key>
+
+# Optional: Auto-generate mock data on deploy (for testing)
+AUTO_GENERATE_MOCK_DATA=true
 ```
+
+**Note:** On deployment, tables are created automatically and mock data is generated if `AUTO_GENERATE_MOCK_DATA=true` 🚀
+
+📖 **[Auto Mock Data Guide →](AUTO_MOCK_DATA.md)**
 
 ### Create Tables
 
@@ -101,8 +108,9 @@ Or use: `create_tables.sql`
 | [QUICK_START.md](QUICK_START.md) | Get running in 5 minutes |
 | [DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md) | Complete deployment guide |
 | [RENDER_DATABASE_SETUP.md](RENDER_DATABASE_SETUP.md) | Database connection details |
+| [AUTO_MOCK_DATA.md](AUTO_MOCK_DATA.md) | Auto mock data on Render (Free Tier) |
+| [MOCK_DATA_GUIDE.md](MOCK_DATA_GUIDE.md) | Generate test data manually |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | System architecture diagrams |
-| [MOCK_DATA_GUIDE.md](MOCK_DATA_GUIDE.md) | Generate test data |
 | [SUMMARY.md](SUMMARY.md) | What we built and why |
 
 ## Local Development

@@ -18,8 +18,13 @@ from app.database import SessionLocal, engine
 from app.models import UserTable, WellnessMetrics
 
 
-def generate_mock_data():
-    """Generate mock data for testing."""
+def generate_mock_data(auto_mode=False):
+    """
+    Generate mock data for testing.
+
+    Args:
+        auto_mode: If True, automatically clears existing data without prompting
+    """
     db = SessionLocal()
 
     try:
@@ -31,15 +36,23 @@ def generate_mock_data():
         # Check if data already exists
         existing_users = db.query(UserTable).count()
         if existing_users > 0:
-            response = input(f"\n⚠️  Database already has {existing_users} users. Clear existing data? (yes/no): ")
-            if response.lower() == 'yes':
-                print("\nClearing existing data...")
+            if auto_mode:
+                print(f"\n⚠️  Database already has {existing_users} users.")
+                print("Running in AUTO MODE - clearing existing data...")
                 db.query(WellnessMetrics).delete()
                 db.query(UserTable).delete()
                 db.commit()
                 print("✓ Existing data cleared")
             else:
-                print("\nKeeping existing data and adding new records...")
+                response = input(f"\n⚠️  Database already has {existing_users} users. Clear existing data? (yes/no): ")
+                if response.lower() == 'yes':
+                    print("\nClearing existing data...")
+                    db.query(WellnessMetrics).delete()
+                    db.query(UserTable).delete()
+                    db.commit()
+                    print("✓ Existing data cleared")
+                else:
+                    print("\nKeeping existing data and adding new records...")
 
         print("\n" + "=" * 60)
         print("Creating Users")
@@ -247,15 +260,20 @@ def main():
         elif command == 'show':
             show_current_data()
             return
+        elif command == 'auto':
+            # Auto mode: no prompts, clears existing data automatically
+            success = generate_mock_data(auto_mode=True)
+            sys.exit(0 if success else 1)
         elif command == 'help':
             print("Usage:")
-            print("  python generate_mock_data.py         # Generate mock data")
+            print("  python generate_mock_data.py         # Generate mock data (interactive)")
+            print("  python generate_mock_data.py auto    # Generate mock data (auto mode, no prompts)")
             print("  python generate_mock_data.py clear   # Clear all data")
             print("  python generate_mock_data.py show    # Show current data")
             return
 
-    # Default: generate mock data
-    success = generate_mock_data()
+    # Default: generate mock data (interactive mode)
+    success = generate_mock_data(auto_mode=False)
     sys.exit(0 if success else 1)
 
 

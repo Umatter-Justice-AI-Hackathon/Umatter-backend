@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="images/Logo.png" alt="Umatter Logo" width="200"/>
+  <img src="images/Logo.png" alt="vault Logo" width="200"/>
 </div>
 
-# Umatter
+# vault
 
 A trauma-aware wellbeing chatbot API that empowers users to offload, reflect, and take action through empathetic AI conversations.
 

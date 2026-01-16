@@ -4,7 +4,7 @@
 
 1. **Create PostgreSQL Database:**
    - Go to Render Dashboard → New → PostgreSQL
-   - Choose a name (e.g., `umatter-db`)
+   - Choose a name (e.g., `vault-db`)
    - Select free or paid tier
    - Render will automatically provide the `DATABASE_URL` environment variable
 
@@ -25,7 +25,7 @@ Set these in your Render Web Service:
 **Required:**
 - `DATABASE_URL` - Automatically set when you link the database
 - `SECRET_KEY` - Generate with: `openssl rand -hex 32`
-- `FRONTEND_URL` - Your React app URL (e.g., `https://umatter.onrender.com`)
+- `FRONTEND_URL` - Your React app URL (e.g., `https://vault.onrender.com`)
 
 **OAuth (when ready):**
 - `GOOGLE_CLIENT_ID`

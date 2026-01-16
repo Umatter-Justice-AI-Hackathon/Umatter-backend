@@ -1,4 +1,4 @@
-# Contributing to Umatter Backend
+# Contributing to vault Backend
 
 Thank you for your interest in contributing! This guide will help you get set up for local development.
 
@@ -15,8 +15,8 @@ Thank you for your interest in contributing! This guide will help you get set up
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/umatter-backend.git
-cd umatter-backend
+git clone https://github.com/your-org/vault-backend.git
+cd vault-backend
 ```
 
 ### 2. Set Up Python Environment
@@ -39,7 +39,7 @@ uv pip install -r requirements-dev.txt
 
 ```bash
 # Create PostgreSQL database
-createdb umatter
+createdb vault
 
 # Copy environment file and configure
 cp .env.example .env
@@ -113,13 +113,13 @@ The API will be available at:
 
 ```bash
 # Build the image
-docker build -t umatter-backend:local .
+docker build -t vault-backend:local .
 
 # Run the container (requires PostgreSQL and Ollama on host)
 docker run -p 8000:8000 \
-  -e DATABASE_URL="postgresql://user:password@host.docker.internal:5432/umatter" \
+  -e DATABASE_URL="postgresql://user:password@host.docker.internal:5432/vault" \
   -e OLLAMA_BASE_URL="http://host.docker.internal:11434" \
-  umatter-backend:local
+  vault-backend:local
 ```
 
 ### Development with Docker
@@ -129,7 +129,7 @@ When using docker-compose:
 - Database data persists in a Docker volume
 - Run migrations: `docker-compose exec app alembic upgrade head`
 - Run tests: `docker-compose exec app pytest`
-- Access database: `docker-compose exec db psql -U umatter`
+- Access database: `docker-compose exec db psql -U vault`
 
 ## Testing
 
@@ -226,10 +226,10 @@ On push to `main`, `develop`, or `draft-app` branches:
 
 ### Image Naming Convention
 
-- `ghcr.io/your-org/umatter-backend:main` - Latest main branch
-- `ghcr.io/your-org/umatter-backend:develop` - Latest develop branch
-- `ghcr.io/your-org/umatter-backend:draft-app-<sha>` - Specific commit
-- `ghcr.io/your-org/umatter-backend:v1.0.0` - Version tags
+- `ghcr.io/your-org/vault-backend:main` - Latest main branch
+- `ghcr.io/your-org/vault-backend:develop` - Latest develop branch
+- `ghcr.io/your-org/vault-backend:draft-app-<sha>` - Specific commit
+- `ghcr.io/your-org/vault-backend:v1.0.0` - Version tags
 
 ### Pull Docker Image
 
@@ -238,13 +238,13 @@ On push to `main`, `develop`, or `draft-app` branches:
 echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
 
 # Pull image
-docker pull ghcr.io/your-org/umatter-backend:main
+docker pull ghcr.io/your-org/vault-backend:main
 ```
 
 ## Project Structure
 
 ```
-umatter-backend/
+vault-backend/
 ├── app/
 │   ├── __init__.py
 │   ├── main.py           # FastAPI application entry point
@@ -271,7 +271,7 @@ Required for local development (copy from `.env.example`):
 
 ```bash
 # Database
-DATABASE_URL=postgresql://localhost:5432/umatter
+DATABASE_URL=postgresql://localhost:5432/vault
 
 # OAuth (get from provider consoles)
 GOOGLE_CLIENT_ID=your_google_client_id
@@ -353,4 +353,4 @@ Closes #123
 6. Ensure CI passes
 7. Request review from maintainers
 
-Thank you for contributing to Umatter! 🎉
+Thank you for contributing to vault! 🎉

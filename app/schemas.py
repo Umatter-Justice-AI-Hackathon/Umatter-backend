@@ -10,6 +10,7 @@ from datetime import datetime
 from typing import Optional, List
 from pydantic import BaseModel, Field
 
+from pydantic import BaseModel, EmailStr, Field
 
 # ============================================================================
 # User Schemas
@@ -69,6 +70,7 @@ class WellnessTrendResponse(BaseModel):
 # ============================================================================
 # LLM / Chat Schemas
 # ============================================================================
+
 
 class ChatRequest(BaseModel):
     """Schema for chat requests."""

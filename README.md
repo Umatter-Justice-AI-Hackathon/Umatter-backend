@@ -1,8 +1,7 @@
 <div align="center">
-  <img src="../images/Logo.png" alt="Umatter Logo" width="200"/>
+  <img src="images/Logo.png" alt="vault Logo" width="200"/>
 </div>
 
-# Umatter Backend
 
 A FastAPI backend for tracking user wellness metrics over time. Built for deployment on Render with PostgreSQL.
 

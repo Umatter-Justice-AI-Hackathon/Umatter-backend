@@ -10,7 +10,7 @@
     - It should remind the user it is a bot if it gets too personal.
     - It should be able to indentify times to intervene with breathing excercises, grounding techniques, or other coping mechanisms.
 - We need a speech-to-text interface to convert user speech into text input for the chatbot.
-- We need something that summarises the session score to a single score. 
+- We need something that summarises the session score to a single score.
     - This score will be plotted in a time series.
 - There should be a "Action" plan generator that creates a list of actionable steps for the user to take based on their conversations with the chatbot.
     - This should include things like seek support from manager
@@ -34,13 +34,13 @@ There will a second aggregated database that holds anonymised user scores for an
 
 ## Core App
 
-This is going to be a FastAPI app that serves as the backend for the Umatter application. It will handle user authentication, session management, and communication with the Ollama models.
+This is going to be a FastAPI app that serves as the backend for the vault application. It will handle user authentication, session management, and communication with the Ollama models.
 
 It will also send the session score and time to the central database in an anonymised way.
 
 ## Interacting with the front end
 
-ReactJS front end will communicate with the FastAPI backend via RESTful API endpoints. The backend will expose endpoints for user authentication, session management, and chatbot interactions. There will be a browser database to store user data locally. 
+ReactJS front end will communicate with the FastAPI backend via RESTful API endpoints. The backend will expose endpoints for user authentication, session management, and chatbot interactions. There will be a browser database to store user data locally.
 
 The key features of the front end will include:
 

@@ -46,13 +46,13 @@
 - **Quality:** Good with llama3.1:8b
 - **Best for:** Local development without internet
 
-## Recommendation for Umatter
+## Recommendation for vault
 
 **Development:** Ollama (local, free, private)
 **Production (MVP):** Groq (free, fast, excellent quality)
 **Production (Scale):** OpenAI GPT-4o-mini (paid but reliable)
 
-## Why Groq is Perfect for Umatter
+## Why Groq is Perfect for vault
 
 1. **FREE** - No cost for MVP and early users
 2. **FAST** - Near-instant responses improve UX
